@@ -7,8 +7,8 @@ type Task = record {
 service : {
     "add_task": (Task) -> (text);
     "get_tasks": () -> (opt vec Task) query;
-    "change_task_status": (task_id: nat, status: text) -> (opt text);
-    "get_tasks_with_pagination": (page_no: nat, page_size: nat) -> (opt vec Task) query;
-    "update_todo_description": (page_no: nat, description: text) -> (opt text);
-    "delete_todo_by_id": (page_no: nat) -> (opt text);
+    "change_task_status": (task_id: text, status: text) -> (opt text);
+    "get_task_with_pagination": (page_no: nat, page_size: nat) -> (opt vec Task) query;
+    "update_task_description": (task_id: text, description: text) -> (opt text);
+    "delete_task_by_id": (task_id: text) -> (opt text);
 }
